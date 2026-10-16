@@ -1,14 +1,14 @@
-name: Basic GitHub Actions Workflow
+name: Basic GitHub Actions Workflow # Specifies workflow name
 
-on:
+on: # Specifies when workflow should be run
   push:
   pull_request:
   workflow_dispatch:
 
-jobs:
+jobs: # Jobs that take up the workflow
   basic-job:
     runs-on: ubuntu-latest
 
-    steps:
+    steps: 
       - name: Run a one-line script
-        run: echo "Hello, world!"
+        run: echo "Hello, world!" # Command to run
