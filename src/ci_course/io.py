@@ -18,7 +18,9 @@ def sample_data_path():
     return Path(__file__).parent / "data" / "sample_measurements.csv"
 
 
-def load_measurements(path=None, errors=[]):
+def load_measurements(path=None, errors=None):
+    if errors is None:
+        errors = []
     """
     Load a table of measurements from a CSV file.
 
@@ -55,7 +57,7 @@ def load_measurements(path=None, errors=[]):
                     continue
                 try:
                     columns[name].append(float(raw))
-                except:
+                except ValueError:
                     columns[name].append(float("nan"))
                     errors.append(row)
 
