@@ -29,3 +29,9 @@ def test_summarises_every_column():
 def test_counts_missing_values():
     assert ci_course.count_missing(np.array([1.0, np.nan, 3.0, np.nan])) == 2
     assert ci_course.count_missing(np.array([1.0, 2.0])) == 0
+
+def test_col_only_missing_vals():
+    summary = ci_course.summarise(np.array([np.nan, np.nan]))
+
+    assert summary["n"] == 0
+    assert summary["mean"] == 0.0
