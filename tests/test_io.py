@@ -27,8 +27,8 @@ def test_reads_a_file_given_by_path(tmp_path):
     assert list(data) == ["height_m"]
     assert data["height_m"].tolist() == [1.5, 2.5]
 
-def test_nan_value_error_for_parser(path):
-    csv = path / "bad.csv"
+def test_nan_value_error_for_parser(tmp_path):
+    csv = tmp_path / "bad.csv"
     csv.write_text("sample_id,height_m\nA,1.5\nB,not-a-number\n", encoding="utf-8")
 
     errors = []
