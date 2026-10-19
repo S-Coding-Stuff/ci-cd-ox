@@ -10,16 +10,16 @@ permissions:
     pages: write
     id-token: write
 
-jobs: 
+jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
         name: github-pages
         url: ${{ steps.deployment.outputs.page_url }}
 
-    steps: 
+    steps:
       - uses: actions/checkout@v7
-        
+
       - name: Set up Python 3.13
         uses: actions/setup-python@v7
         with:

@@ -18,4 +18,3 @@ documentation for details.
    reference
    install
    quickstart
-
