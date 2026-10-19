@@ -39,7 +39,15 @@ def summarise(values):
     }
 
 
-def count_missing(values):
+def count_missing(values) -> int:
+    """
+    Params:
+        values - array_like
+            The measurements to inspect.
+    Returns:
+        int
+            The number of missing values.
+    """
     values = np.asarray(values, dtype=float)
     return int(np.isnan(values).sum())
 
